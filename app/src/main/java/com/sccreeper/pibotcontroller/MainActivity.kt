@@ -5,6 +5,7 @@ package com.sccreeper.pibotcontroller
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.SeekBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.sccreeper.pibotcontroller.util.RequestUtil
@@ -28,31 +29,92 @@ class MainActivity : AppCompatActivity() {
         val controlLEDOff = findViewById<Button>(R.id.controlHeadlightsOff)
 
         controlLEDOn.setOnClickListener {
-            RequestUtil().postRequestControl("/control/headlights/", "{ \"STATUS\" : \"on\" }", botIpAddress.text.toString(), botStatus, it )
+            RequestUtil().postRequestControl(
+                "/control/headlights/",
+                "{ \"STATUS\" : \"on\" }",
+                botIpAddress.text.toString(),
+                botStatus,
+                it
+            )
         }
 
         controlLEDOff.setOnClickListener {
-            RequestUtil().postRequestControl("/control/headlights/", "{ \"STATUS\" : \"off\" }", botIpAddress.text.toString(), botStatus, it )
+            RequestUtil().postRequestControl(
+                "/control/headlights/",
+                "{ \"STATUS\" : \"off\" }",
+                botIpAddress.text.toString(),
+                botStatus,
+                it
+            )
         }
 
-       findViewById<Button>(R.id.controlForwards).setOnClickListener {
-           RequestUtil().postRequestControl("/control/motor/", "{ \"DIRECTION\" : \"forward\" }", botIpAddress.text.toString(), botStatus, it )
-       }
+        findViewById<Button>(R.id.controlForwards).setOnClickListener {
+            RequestUtil().postRequestControl(
+                "/control/motor/",
+                "{ \"DIRECTION\" : \"forward\" }",
+                botIpAddress.text.toString(),
+                botStatus,
+                it
+            )
+        }
         findViewById<Button>(R.id.controlBackwards).setOnClickListener {
-            RequestUtil().postRequestControl("/control/motor/", "{ \"DIRECTION\" : \"backward\" }", botIpAddress.text.toString(), botStatus, it )
+            RequestUtil().postRequestControl(
+                "/control/motor/",
+                "{ \"DIRECTION\" : \"backward\" }",
+                botIpAddress.text.toString(),
+                botStatus,
+                it
+            )
         }
 
         findViewById<Button>(R.id.controlLeft).setOnClickListener {
-            RequestUtil().postRequestControl("/control/motor/", "{ \"DIRECTION\" : \"left\" }", botIpAddress.text.toString(), botStatus, it )
+            RequestUtil().postRequestControl(
+                "/control/motor/",
+                "{ \"DIRECTION\" : \"left\" }",
+                botIpAddress.text.toString(),
+                botStatus,
+                it
+            )
         }
 
         findViewById<Button>(R.id.controlRight).setOnClickListener {
-            RequestUtil().postRequestControl("/control/motor/", "{ \"DIRECTION\" : \"right\" }", botIpAddress.text.toString(), botStatus, it )
+            RequestUtil().postRequestControl(
+                "/control/motor/",
+                "{ \"DIRECTION\" : \"right\" }",
+                botIpAddress.text.toString(),
+                botStatus,
+                it
+            )
         }
 
         findViewById<Button>(R.id.controlStop).setOnClickListener {
-            RequestUtil().postRequestControl("/control/motor/", "{ \"DIRECTION\" : \"stop\" }", botIpAddress.text.toString(), botStatus, it )
+            RequestUtil().postRequestControl(
+                "/control/motor/",
+                "{ \"DIRECTION\" : \"stop\" }",
+                botIpAddress.text.toString(),
+                botStatus,
+                it
+            )
         }
+
+        findViewById<SeekBar>(R.id.motorSpeed)?.setOnSeekBarChangeListener(object :
+            SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {
+            }
+
+            override fun onStopTrackingTouch(seek: SeekBar) {
+                RequestUtil().postRequestControl(
+                    "/control/motor/",
+                    "{ \"SPEED\" : \"${seek.progress}\" }",
+                    botIpAddress.text.toString(),
+                    botStatus,
+                    seek.rootView
+                )
+            }
+        })
 
 
     }

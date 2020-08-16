@@ -9,4 +9,5 @@
     <string name="ctrl_motor_left">Left</string>
     <string name="ctrl_motor_right">Right</string>
     <string name="ctrl_motor_stop">Stop</string>
+    <string name="motor_speed">Motor speed</string>
 </resources>

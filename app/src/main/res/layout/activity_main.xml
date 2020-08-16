@@ -127,4 +127,23 @@
         app:layout_constraintStart_toEndOf="@+id/controlLeft"
         app:layout_constraintTop_toBottomOf="@+id/controlForwards" />
 
+    <SeekBar
+        android:id="@+id/motorSpeed"
+        android:layout_width="300dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="80dp"
+        android:max="100"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/controlLeft" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="87dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="80dp"
+        android:text="@string/motor_speed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/controlLeft" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
