@@ -6,3 +6,5 @@
 #### Android app for PiBot
 
 Main repository over [here](https://github.com/sccreeper/pibot).
+
+See `auto_ui` branch for compatibility changes

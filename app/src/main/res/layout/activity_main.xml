@@ -6,17 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/controlForwards"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="225dp"
-        android:text="@string/ctrl_motor_forward"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/botStatus"
         android:layout_width="371dp"
@@ -53,97 +42,18 @@
         tools:layout_editor_absoluteX="1dp" />
 
     <Button
-        android:id="@+id/controlHeadlightsOn"
+        android:id="@+id/connectButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="LED on"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider" />
+        android:text="@string/connect"
+        app:layout_constraintStart_toEndOf="@+id/botIpAddress"
+        tools:layout_editor_absoluteY="73dp" />
 
-    <Button
-        android:id="@+id/controlHeadlightsOff"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="LED off"
-        app:layout_constraintStart_toEndOf="@+id/controlHeadlightsOn"
-        app:layout_constraintTop_toTopOf="@+id/divider" />
-
-    <Button
-        android:id="@+id/controlLeft"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="24dp"
-        android:text="@string/ctrl_motor_left"
-        app:layout_constraintEnd_toStartOf="@+id/controlRight"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/controlForwards" />
-
-    <Button
-        android:id="@+id/controlBackwards"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/ctrl_motor_backward"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/controlLeft" />
-
-    <Button
-        android:id="@+id/controlRight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/ctrl_motor_right"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/controlLeft"
-        app:layout_constraintTop_toBottomOf="@+id/controlForwards" />
-
-    <View
-        android:id="@+id/divider2"
+    <TableLayout
+        android:id="@+id/uiTable"
         android:layout_width="409dp"
-        android:layout_height="1dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toTopOf="@+id/controlForwards"
-        app:layout_constraintTop_toBottomOf="@+id/controlHeadlightsOff"
-        tools:layout_editor_absoluteX="1dp" />
-
-    <Button
-        android:id="@+id/controlStop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/ctrl_motor_stop"
-        app:layout_constraintEnd_toStartOf="@+id/controlRight"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/controlLeft"
-        app:layout_constraintTop_toBottomOf="@+id/controlForwards" />
-
-    <SeekBar
-        android:id="@+id/motorSpeed"
-        android:layout_width="300dp"
-        android:layout_height="22dp"
-        android:layout_marginTop="80dp"
-        android:max="100"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/controlLeft" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="87dp"
-        android:layout_height="19dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="80dp"
-        android:text="@string/motor_speed"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/controlLeft" />
+        android:layout_height="597dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="133dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

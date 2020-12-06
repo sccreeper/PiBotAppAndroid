@@ -1,12 +1,5 @@
 <resources>
     <string name="app_name">PiBot Controller</string>
     <string name="ip_hint">Enter network address</string>
-    <string name="ctrl_led_on">LED on</string>
-    <string name="ctrl_led_off">LED off</string>
-    <string name="ctrl_motor_forward">Forward</string>
-    <string name="ctrl_motor_backward">Backward</string>
-    <string name="ctrl_motor_left">Left</string>
-    <string name="ctrl_motor_right">Right</string>
-    <string name="ctrl_motor_stop">Stop</string>
-    <string name="motor_speed">Motor speed</string>
+    <string name="connect">Connect</string>
 </resources>

@@ -13,7 +13,7 @@ class RequestUtil {
                 Snackbar.make(view, "Make sure you enter a  IP address!", Snackbar.LENGTH_LONG)
             errorSnackbar.show()
         } else {
-            Fuel.post("http://" + ipAddress + path)
+            Fuel.post("http://" + ipAddress + ":5000" + path)
                 .jsonBody(body)
                 .response { request, response, result ->
                     statusDisplay.text = String(response.data)
